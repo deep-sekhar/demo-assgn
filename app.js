@@ -13,23 +13,23 @@ app.use(cors())
 const dotenv = require("dotenv");
 dotenv.config({ path: "./.env" });
 
-// server routes
-const AddData = require("./routes/AddData")
-const GetData = require("./routes/GetData")
-app.use("/api/add", AddData)
-app.use("/api/get", GetData)
-
 // static files nand routing on production 
 if(process.env.NODE_ENV == "production")
 {
   console.log("in production")
   const path = require('path')
   const publicPath = path.join(__dirname, '/clientside/build');
-  app.use(express.static('clientside/build'))
-  app.get('/', (req, res) => {
+  app.use(express.static(publicPath))
+  app.get('*', (req, res) => {
     res.sendFile(path.join(publicPath, 'index.html'));
  });
 }
+
+// server routes
+const AddData = require("./routes/AddData")
+const GetData = require("./routes/GetData")
+app.use("/api/add", AddData)
+app.use("/api/get", GetData)
 
 // DATABASE
 const connection =  require("./db/db")
