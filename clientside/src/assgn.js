@@ -19,7 +19,7 @@ function Assgn() {
         try {
             // console.log("Calling")
             const options = {
-                url: "http://localhost:5000/api/add",
+                url: "/api/add",
                 method: "POST",
                 headers: {
                     'Accept': "application/json",
@@ -46,7 +46,7 @@ function Assgn() {
         try {
             // console.log("Calling")
             const options = {
-                url: "http://localhost:5000/api/get",
+                url: "/api/get",
                 method: "GET",
                 headers: {
                     'Accept': "application/json",
