@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "predev": "npm i && cd clientside && npm i && npm run build && cd ..",
+    "heroku-postbuild":"npm install --prefix clientside npm run build --prefix clientside",
     "start": "nodemon app.js",
     "dev": "concurrently \"nodemon app.js\" \"cd clientside && react-scripts start\" ",
     "local": "nodemon app.js"
