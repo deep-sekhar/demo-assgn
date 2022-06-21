@@ -20,16 +20,16 @@ app.use("/api/add", AddData)
 app.use("/api/get", GetData)
 
 // static files nand routing on production 
-if(process.env.NODE_ENV == "production")
-{
-  console.log("in production")
-  const path = require('path')
-  const publicPath = path.join(__dirname, '/clientside/build');
-  app.use(express.static('clientside/build'))
-  app.get('/', (req, res) => {
-    res.sendFile(path.join(publicPath, 'index.html'));
- });
-}
+// if(process.env.NODE_ENV == "production")
+// {
+//   console.log("in production")
+//   const path = require('path')
+//   const publicPath = path.join(__dirname, '/clientside/build');
+//   app.use(express.static('clientside/build'))
+//   app.get('/', (req, res) => {
+//     res.sendFile(path.join(publicPath, 'index.html'));
+//  });
+// }
 
 // DATABASE
 const connection =  require("./db/db")
