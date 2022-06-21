@@ -23,7 +23,7 @@ if(process.env.NODE_ENV == "production")
   app.get('/', (req, res) => {
     res.sendFile(path.join(publicPath, 'index.html'));
  });
-}
+} 
 
 // server routes
 const AddData = require("./routes/AddData")
